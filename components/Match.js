@@ -38,7 +38,7 @@ function Match({type , league , matches}) {
                         ? <div style={{color : "red" , fontWeight : "600"}}> إستراحة</div>
                         : <div  style={{color : "red" , fontWeight : "600"}}className= {styles.currentminute}>
                           {(elm.Period == "2" && elm.CurrentMinute === 0 ) ? "90+" : elm.CurrentMinute}
-                          <span className= {styles.guime}>'</span>
+                          <span className= {styles.guime}>`&apos;`</span>
                         </div>
                     }
                   </div>

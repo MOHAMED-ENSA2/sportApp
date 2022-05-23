@@ -26,11 +26,11 @@ function Navbar() {
             <Link href="/">
                 <div onMouseOver={() => handleDisplay("news")} className={styles.item + " " + styles.news}>الأخبار</div>
             </Link>
-            <div onMouseOver={() => handleDisplay("matches")} className={styles.item}><span>المباريات</span> <span><i class="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span> </div>
-            <div onMouseOver={() => handleDisplay("leagues")} className={styles.item}><span>المسابقات</span> <span><i class="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span> </div>
-            <div onMouseOver={() => handleDisplay("teams")} className={styles.item}><span>الفرق</span> <span><i class="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span></div>
-            <div onMouseOver={() => handleDisplay("players")} className={styles.item + " " + styles.players}><span>اللاعبين</span> <span><i class="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span></div>
-            <div onMouseOver={() => handleDisplay("otherSports")} className={styles.item}><span>رياضات أخرى</span> <span><i class="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span> </div>
+            <div onMouseOver={() => handleDisplay("matches")} className={styles.item}><span>المباريات</span> <span><i className="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span> </div>
+            <div onMouseOver={() => handleDisplay("leagues")} className={styles.item}><span>المسابقات</span> <span><i className="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span> </div>
+            <div onMouseOver={() => handleDisplay("teams")} className={styles.item}><span>الفرق</span> <span><i className="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span></div>
+            <div onMouseOver={() => handleDisplay("players")} className={styles.item + " " + styles.players}><span>اللاعبين</span> <span><i className="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span></div>
+            <div onMouseOver={() => handleDisplay("otherSports")} className={styles.item}><span>رياضات أخرى</span> <span><i className="fa fa-chevron-down fa-xs" aria-hidden="true"></i></span> </div>
          </div>
          <div className={styles.leftBar}>
             <div className={darkmode ? styles.darkModeSwitcher + " " + styles.onLightmode : styles.darkModeSwitcher} onClick = {() => setDarkmode(state => !state)} >
@@ -46,16 +46,16 @@ function Navbar() {
             {   display === "teams" ?
                 <div className={styles.categories}>
                     { 
-                        ctg.teams.map((elm) => {
+                        ctg.teams.map((elm, i) => {
                             return(
-                                <div className={styles.ctgitems}>
+                                <div key={i} className={styles.ctgitems}>
                                     { elm.map((item,index) => {
                                             
                                         if (index === 0) 
                                             return <div  key = {index} className={styles.title}>{item.league}</div> 
                                         
                                         return ( 
-                                            <Link href={"/teams/" + item.id}>
+                                            <Link key = {index} href={"/teams/" + item.id}>
                                                 <div className={styles.ctgitem} key = {index}>{item.team}</div>
                                             </Link>
                                         )
@@ -69,16 +69,16 @@ function Navbar() {
                 : display === "leagues" ?
                 <div className={styles.categories}>
                     {
-                        ctg.leagues.map((elm) => {
+                        ctg.leagues.map((elm , i) => {
                             return(
-                                <div className={styles.ctgitems}>
+                                <div key={i} className={styles.ctgitems}>
                                     { elm.map((item,index) => {
                                             
                                         if (index === 0) 
                                             return <div  key = {index} className={styles.title}>{item.title}</div> 
                                         
                                         return ( 
-                                            <Link href={"/leagues/" + item.id}>
+                                            <Link key = {index}   href={"/leagues/" + item.id}>
                                                 <div className={styles.ctgitem} key = {index}>{item.team}</div>
                                             </Link>
                                         )
@@ -104,16 +104,16 @@ function Navbar() {
                 : display === "players" ?
                 <div className={styles.categories}>
                     {
-                        ctg.players.map((elm) => {
+                        ctg.players.map((elm , i) => {
                             return(
-                                <div className={styles.ctgitems}>
+                                <div  key={i} className={styles.ctgitems}>
                                     { elm.map((item,index) => {
                                             
                                         if (index === 0) 
                                             return <div  key = {index} className={styles.title}>{item.title}</div> 
                                         
                                         return ( 
-                                            <Link href={"/players/" + item.id}>
+                                            <Link key = {index} href={"/players/" + item.id}>
                                                 <div className={styles.ctgitem} key = {index}>{item.player}</div>
                                             </Link>
                                         )
