@@ -19,7 +19,7 @@ function ResultCard({competition_name,scheduled,team1_name,team2_name,team1_logo
                     : <div className= {styles.currentminute}>
                         {(period == "2" && current_minute === 0 ) ? "90+" : current_minute}
                         <span className= {styles.guime}>
-                        `&apos;`
+                        &apos;
                         </span>
                       </div>
                     }
