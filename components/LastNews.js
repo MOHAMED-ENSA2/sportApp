@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "../styles/LastNews.module.css"
-import LastNewsCard from './lastNewsCard'
+import LastNewsCard from './LastNewsCard'
 
 function LastNews() {
   return (

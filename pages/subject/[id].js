@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 import http from "../../service/http"
 import {apiEndpoint} from "../../config/configData.json"
-import LastNewsCard from '../../components/lastNewsCard'
+import LastNewsCard from '../../components/LastNewsCard'
 import styles from "../../styles/Subject.module.css"
 
 export default function Subject() {
